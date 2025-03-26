@@ -10,23 +10,27 @@ int main(void) {
 
   int quantidade_Secar = 0;
   int quantidade_Enxaguar = 0;
-  int quantidadeG_Lavar = 0;
+  int quantidade_Lavar = 0;
 
   while( programa != 's' ) {
     switch (programa) {
       case 'z':
-	quantidadeG_Lavar++;
+	quantidade_Lavar++;
+	printf("Lavando...\n");
       case 'y': 
-    quantidade_Enxaguar++; 
+    quantidade_Enxaguar++;
+    printf("Enxaguando...\n");
       case 'x':
 	quantidade_Secar++;
+	printf("Secando...\n");
     }
+
 
   printf("Escolha o programa de lavagem:\n x (Secar)\n y (Enxaguar e Secar)\n z (Lavar, Enxaguar e secar)\n S (Stop) para encerrar:");
     programa = getchar();
     getchar();
   }
 
-  printf("Secagens: %d Enxágues: %d Lavagens: %d", quantidade_Secar, quantidade_Enxaguar, quantidadeG_Lavar);
+  printf("Secagens: %d Enxágues: %d Lavagens: %d", quantidade_Secar, quantidade_Enxaguar, quantidade_Lavar);
   return 0;
 }
