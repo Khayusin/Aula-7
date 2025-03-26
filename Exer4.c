@@ -1,50 +1,67 @@
 #include <stdio.h>
 
 int main(void) {
-  char produto;
-printf("-----------------------\nSuco: R$9,00\nBatata: R$10,00\nHamburguer: R$15,00\nCombos: R$30,00\n-----------------------\n");
+    char produto;
+    int quantidade_Suco = 0;
+    int quantidade_Batata = 0;
+    int quantidade_Hamburguer = 0;
+    int quantidade_Combo = 0;
+    int total_itens = 0;
+    int valor_total = 0;
 
-  printf("Qual produto foi vendido?;\n s (suco)\n b (batata)\n h (hamburguer)\n c (Combo)\r r (relatório): ");
-    produto = getchar();
-    getchar();
+    printf("-----------------------\n");
+    printf("Suco: R$9,00\n");
+    printf("Batata: R$10,00\n");
+    printf("Hamburguer: R$15,00\n");
+    printf("Combos: R$30,00\n");
+    printf("-----------------------\n");
 
-return 0;
-}
+    while(1) {
+        printf("Qual produto foi vendido?\n");
+        printf("s (suco)\n");
+        printf("b (batata)\n");
+        printf("h (hamburguer)\n");
+        printf("c (Combo)\n");
+        printf("r (relatório): ");
+        
+        produto = getchar();
+        getchar(); // Para consumir o caractere de nova linha
+        
+        if (produto == 'r') {
+            break;
+        }
 
-  int quantidade_Suco = 0;
-  int valor_Suco = quantidade-suco*9;
-  int quantidade_Batata = 0;
-  int valor_batata = quantidade_Batata*10;
-  int quantidadeG_Hamburguer = 0;
-  int valor_Hambuguer = quantidadeG_Hamburguer*15;
-  int quantidade_Combo = 0;
-  int valor_combo = quantidade_Combo*30;
-  int total = 0;
-  
-
-  while( produto != 'r' ) {
-    switch (produto) {
-      case 's':
-	quantidade_Suco++;
-	break;
-      case 'b': 
-    quantidade_Batata++;  
-	break;
-      case 'h':
-	quantidade_Hamburguer++;
-	break;
-      case 'c':
-	quantidade_Combo++;
+        switch (produto) {
+            case 's':
+                quantidade_Suco++;
+                break;
+            case 'b': 
+                quantidade_Batata++;  
+                break;
+            case 'h':
+                quantidade_Hamburguer++;
+                break;
+            case 'c':
+                quantidade_Combo++;
+                break;
+            default:
+                printf("Opção inválida!\n");
+                continue;
+        }
     }
 
-printf("Qual produto foi vendido?;\n s (suco)\n b (batata)\n h (hamburguer)\n c (Combo)\r r (relatório): ");;
-    produto = getchar();
-    getchar();
-  }
-
-    int itens = quantidade_Suco+quantidade_Batata+quantidade_Hamburguer+quantidade_Combo
-    int valor_total = valor_Suco+valor_batata+valor_Hambuguer+valor_combo
+    total_itens = quantidade_Suco + quantidade_Batata + quantidade_Hamburguer + quantidade_Combo;
+    valor_total = (quantidade_Suco * 9) + (quantidade_Batata * 10) + 
+                  (quantidade_Hamburguer * 15) + (quantidade_Combo * 30);
     
-  printf("-----------------------\nSuco: "%d" vendidos\nBatata: "%d" vendidos\nHamburguer: "%d" vendidos\nCombos: "%d" vendidos\n-----------------------\nTotal: "%d" Itens\n Valor total: R$"%d",00", quantidade_Suco, quantidade_Batata, quantidade_Hamburguer, quantidade_Combo, itens, valor_total);
-  return 0;
+    printf("-----------------------\n");
+    printf("Suco:       %d vendidos\n", quantidade_Suco);
+    printf("Batata:      %d vendidas\n", quantidade_Batata);
+    printf("Hamburguer:  %d vendidos\n", quantidade_Hamburguer);
+    printf("Combos:      %d vendidos\n", quantidade_Combo);
+    printf("-----------------------\n");
+    printf("Total:      %d itens\n", total_itens);
+    printf("Valor total: R$ %d,00\n", valor_total);
+    
+    return 0;
 }
