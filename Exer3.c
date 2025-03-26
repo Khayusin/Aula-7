@@ -14,18 +14,12 @@ int main(void) {
 
   while( programa != 's' ) {
     switch (programa) {
-      case 'x':
-	quantidade_Secar++;
-	break;
-      case 'y': 
-    quantidade_Enxaguar++;  
-    quantidade_Secar++;  
-	break;
       case 'z':
 	quantidadeG_Lavar++;
-	quantidade_Enxaguar++;
+      case 'y': 
+    quantidade_Enxaguar++; 
+      case 'x':
 	quantidade_Secar++;
-	break;
     }
 
   printf("Escolha o programa de lavagem:\n x (Secar)\n y (Enxaguar e Secar)\n z (Lavar, Enxaguar e secar)\n S (Stop) para encerrar:");
