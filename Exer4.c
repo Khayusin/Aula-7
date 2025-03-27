@@ -25,7 +25,7 @@ int main(void) {
         printf("r (relatório): ");
         
         produto = getchar();
-        getchar(); // Para consumir o caractere de nova linha
+        getchar();
         
         if (produto == 'r') {
             break;
